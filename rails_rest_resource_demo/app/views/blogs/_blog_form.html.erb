@@ -1,0 +1,15 @@
+<%= render partial: "blog_errors", locals: {blog: @blog}%>
+
+<%= form_with(model: blog) do |form| %>
+    <div> 
+    <%= form.label "Title", style: "display: block"%>
+    <%= form.text_field :title %>
+    </div>
+     <div> 
+    <%= form.label "Description", style: "display: block"%>
+    <%= form.text_field :description %>
+    </div>
+    <div>
+        <%= form.submit "Submit" %>
+    </div>
+<%end%>

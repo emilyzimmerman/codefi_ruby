@@ -1,0 +1,24 @@
+<h1>List of Blogs</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Operations</th>
+    </tr>
+
+<% @blogs.each do |blog|%>
+    <tr>
+        <td><%=blog.id%></td>
+        <td><%=blog.title%></td>
+        <td><%=blog.description%></td>
+        <td>
+            <%= link_to "Show", blog_path(blog)%> 
+            <%= link_to "Edit", edit_blog_path(blog)%> 
+            <%= button_to "Delete", blog_path(blog), method: :delete %>
+        </td>
+    </tr>
+<%end%>
+</table>
+
+<%= link_to "Create New Blog", new_blog_path%>
